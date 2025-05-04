@@ -26,7 +26,7 @@ export default function App() {
         id="main"
       >
         <img
-          src="/portfolio/public/assets/images/bg-image.png"
+          src="/portfolio/src/assets/images/bg-image.png"
           alt="image"
           className="w-[700px] 2xl:w-[1100px] object-cover absolute right-[0rem] top-[0rem] hidden lg:block"
         />
