@@ -26,7 +26,7 @@ export default function App() {
         id="main"
       >
         <img
-          src="/portfolio/src/assets/images/bg-image.png"
+          src="../assets/images/bg-image.png"
           alt="image"
           className="w-[700px] 2xl:w-[1100px] object-cover absolute right-[0rem] top-[0rem] hidden lg:block"
         />
@@ -208,7 +208,7 @@ export default function App() {
         </div>
 
         <img
-          src="/portfolio/src/assets/images/me.png"
+          src="../assets/images/me.png"
           alt="me"
           className="z-3 h-[500px] w-[500px] 2xl:h-[600px] 2xl:w-[600px] object-cover absolute top-[61%] 2xl:top-[69%] left-[55%] transform -translate-x-1/2 -translate-y-1/2"
         />
