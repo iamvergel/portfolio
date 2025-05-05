@@ -2,22 +2,11 @@
 
 import TopNav from "./main/topnav";
 import Home from "./main/home";
-import { useState, useEffect } from "react";
+
 
 export default function App() {
-  const [isOpen] = useState(false);
 
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
 
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [isOpen]);
 
   return (
     <>

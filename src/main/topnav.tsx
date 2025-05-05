@@ -99,38 +99,38 @@ export default function TopNav() {
       </ul>
 
       {menuOpen && (
-        <div className="absolute top-16 left-0 w-full bg-white shadow-md flex flex-col gap-4 px-5 py-4 text-[14px] uppercase md:hidden">
+        <div className="absolute top-16 left-0 w-96 bg-white shadow-md flex flex-col gap-4 px-5 py-4 text-[14px] uppercase md:hidden">
           <a
             href="#main"
-            className={`nav-link ${activeLink === "#main" ? "active" : ""}`}
+            className={`nav-link ${activeLink === "#main" ? "active" : ""} w-26`}
             onClick={toggleMenu}
           >
             Home
           </a>
           <a
             href="#about"
-            className={`nav-link ${activeLink === "#about" ? "active" : ""}`}
+            className={`nav-link ${activeLink === "#about" ? "active" : ""} w-26`}
             onClick={toggleMenu}
           >
             About Me
           </a>
           <a
             href="#design"
-            className={`nav-link ${activeLink === "#design" ? "active" : ""}`}
+            className={`nav-link ${activeLink === "#design" ? "active" : ""} w-26`}
             onClick={toggleMenu}
           >
             My Design
           </a>
           <a
             href="#artworks"
-            className={`nav-link ${activeLink === "#artworks" ? "active" : ""}`}
+            className={`nav-link ${activeLink === "#artworks" ? "active" : ""} w-26`}
             onClick={toggleMenu}
           >
             My Artworks
           </a>
           <a
             href="#projects"
-            className={`nav-link ${activeLink === "#projects" ? "active" : ""}`}
+            className={`nav-link ${activeLink === "#projects" ? "active" : ""} w-26`}
             onClick={toggleMenu}
           >
             My Projects
