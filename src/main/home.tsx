@@ -48,7 +48,7 @@ export default function Home() {
           alt="image1"
           className="w-auto object-cover hover:scale-110 transition duration-300"
         />
-        <img
+        <img 
           src="../assets/images/top-image4.png"
           alt="image1"
           className="w-auto object-cover hover:scale-110 transition duration-300"
