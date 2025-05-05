@@ -3,6 +3,8 @@
 
 :root {
   font-family: "Red Rose", sans-serif;
+  scrollbar-width: thin;
+  scrollbar-color: #8a030367 #8a030334;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,6 +15,8 @@
 * {
   margin: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
+  
 }
 
 #topnav {
@@ -52,4 +56,54 @@
 
 #info {
  letter-spacing: 3px;
+}
+
+.nav-link.active {
+  color: #2F465B;
+  font-weight: bold;
+}
+
+.glitch-layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0.9;
+  mix-blend-mode: lighten;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.glitch1 {
+  animation: glitch1 1s infinite;
+}
+
+.glitch2 {
+  animation: glitch2 1.3s infinite;
+}
+
+.glitch3 {
+  animation: glitch3 1.5s infinite;
+}
+
+@keyframes glitch1 {
+  0%, 100% { transform: translate(0, 0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(2px, -2px); }
+  60% { transform: translate(-1px, 1px); }
+  80% { transform: translate(1px, -1px); }
+}
+
+@keyframes glitch2 {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(1px, -1px); }
+  50% { transform: translate(-1px, 1px); }
+  75% { transform: translate(2px, 2px); }
+}
+
+@keyframes glitch3 {
+  0%, 100% { transform: translate(0, 0); }
+  30% { transform: translate(2px, -2px); }
+  60% { transform: translate(-2px, 2px); }
 }
