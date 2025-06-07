@@ -16,15 +16,15 @@ export default function Home() {
   }, [isOpen]);
 
   const images = [
-    "../assets/images/bg-image.png",
-    "../assets/images/bg-image1.png",
-    "../assets/images/bg-image5.png",
-    "../assets/images/bg-image2.png",
-    "../assets/images/bg-image.png",
-    "../assets/images/bg-image6.png",
-    "../assets/images/bg-image3.png",
-    "../assets/images/bg-image4.png",
-    "../assets/images/bg-image7.png",
+    "/portfolio/public/assets/images/bg-image.png",
+    "/portfolio/public/assets/images/bg-image1.png",
+    "/portfolio/public/assets/images/bg-image5.png",
+    "/portfolio/public/assets/images/bg-image2.png",
+    "/portfolio/public/assets/images/bg-image.png",
+    "/portfolio/public/assets/images/bg-image6.png",
+    "/portfolio/public/assets/images/bg-image3.png",
+    "/portfolio/public/assets/images/bg-image4.png",
+    "/portfolio/public/assets/images/bg-image7.png",
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -46,22 +46,22 @@ export default function Home() {
     >
       <div className="absolute left-15 top-[45rem] lg:top-[9rem] transform -translate-y-1/2 lg:flex flex-row gap-0 h-28">
         <img
-          src="../assets/images/top-image1.png"
+          src="/portfolio/public/assets/images/top-image1.png"
           alt="image1"
           className="w-auto object-cover hover:scale-110 transition duration-300"
         />
         <img
-          src="../assets/images/top-image2.png"
+          src="/portfolio/public/assets/images/top-image2.png"
           alt="image1"
           className="w-auto object-cover hover:scale-110 transition duration-300"
         />
         <img
-          src="../assets/images/top-image3.png"
+          src="/portfolio/public/assets/images/top-image3.png"
           alt="image1"
           className="w-auto object-cover hover:scale-110 transition duration-300"
         />
         <img
-          src="../assets/images/top-image4.png"
+          src="/portfolio/public/assets/images/top-image4.png"
           alt="image1"
           className="w-auto object-cover hover:scale-110 transition duration-300"
         />
@@ -100,7 +100,7 @@ export default function Home() {
       </div>
 
       <div
-        className="z-20 text-[#171E25] absolute bottom-[13rem] lg:bottom-[4rem] 2xl:top-[47rem] left-[1rem] lg:left-[3rem]"
+        className="z-4 text-[#171E25] absolute bottom-[13rem] lg:bottom-[4rem] 2xl:top-[47rem] left-[1rem] lg:left-[3rem]"
         style={{ letterSpacing: "3px" }}
       >
         <button
@@ -113,7 +113,7 @@ export default function Home() {
 
         {isOpen && (
           <div
-            className="relative z-10"
+            className="relative "
             role="dialog"
             aria-modal="true"
             aria-labelledby="modal-title"
@@ -196,11 +196,86 @@ export default function Home() {
 
       <div className="z-1 relative lg:z-2 absolute top-[58%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center">
         <div className="absolute top-[210px] left-[75%] lg:top-[58%] lg:left-[55%] transform -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] lg:w-[500px] lg:h-[500px] 2xl:w-[670px] 2xl:h-[670px] rounded-full bg-gradient-to-l from-[#ffffff] via-[rgba(255,255,255,0.6)] via-[rgba(255,255,255,0.1)] to-[rgba(255,255,255,0)] p-[30px] lg:p-[50px] 2xl:p-[60px]">
+          <div className="hidden lg:block absolute top-[38%] lg:top-[54%] left-[85%] lg:left-[91%] transform -translate-x-1/2 -translate-y-1/2 flex flex-col gap-5 z-4 w-18 h-80 justify-center items-center">
+            <a
+              href="#"
+              className="absolute top-0 left-0 w-10 h-10 rounded-full bg-white text-black flex items-center justify-center hover:bg-gray-200 transition"
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "#171E25";
+                e.currentTarget.style.color = "white";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "white";
+                e.currentTarget.style.color = "black";
+              }}
+            >
+              <i className="fab fa-instagram text-2xl"></i>
+            </a>
+            <a
+              href="https://www.facebook.com/vergel.macayan.7/"
+              target="_blank"
+              className="absolute top-14 left-6.5 w-10 h-10 rounded-full bg-white text-black flex items-center justify-center hover:bg-gray-200 transition"
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "#171E25";
+                e.currentTarget.style.color = "white";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "white";
+                e.currentTarget.style.color = "black";
+              }}
+            >
+              <i className="fab fa-facebook-f text-2xl"></i>
+            </a>
+            <a
+              href="https://github.com/iamvergel"
+              target="_blank"
+              className="absolute top-30 left-9 w-10 h-10 rounded-full bg-white text-black flex items-center justify-center hover:bg-gray-200 transition"
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "#171E25";
+                e.currentTarget.style.color = "white";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "white";
+                e.currentTarget.style.color = "black";
+              }}
+            >
+              <i className="fab fa-github text-2xl"></i>
+            </a>
+            <a
+              href="#"
+              className="absolute top-46 left-6.5 w-10 h-10 rounded-full bg-white text-black flex items-center justify-center hover:bg-gray-200 transition"
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "#171E25";
+                e.currentTarget.style.color = "white";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "white";
+                e.currentTarget.style.color = "black";
+              }}
+            >
+              <i className="fab fa-twitter text-2xl"></i>
+            </a>
+            <a
+              href="https://t.me/VergelMacayan"
+              target="_blank"
+              className="absolute top-60 left-0 w-10 h-10 rounded-full bg-white text-black flex items-center justify-center hover:bg-gray-200 transition"
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = "#171E25";
+                e.currentTarget.style.color = "white";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = "white";
+                e.currentTarget.style.color = "black";
+              }}
+            >
+              <i className="fab fa-telegram-plane text-2xl"></i>
+            </a>
+          </div>
           <div className="w-full h-full rounded-full bg-gradient-to-b from-[#192734] to-[#250000]"></div>
         </div>
       </div>
 
-      <div className=" relative top-[38%] lg:top-[61%] left-[85%] lg:left-[70.2%] transform -translate-x-1/2 -translate-y-1/2 flex flex-col gap-5 z-4 w-18 h-80 justify-center items-center">
+      <div className="lg:hidden relative top-[38%] lg:top-[61%] left-[85%] lg:left-[70.2%] transform -translate-x-1/2 -translate-y-1/2 flex flex-col gap-5 z-4 w-18 h-80 justify-center items-center">
         <a
           href="#"
           className="absolute top-0 left-0 w-10 h-10 rounded-full bg-white text-black flex items-center justify-center hover:bg-gray-200 transition"
@@ -214,9 +289,6 @@ export default function Home() {
           }}
         >
           <i className="fab fa-instagram text-2xl"></i>
-          <span className="hidden group-hover:block absolute left-12 bg-black text-white px-2 py-1 rounded">
-            Vergel Macayan
-          </span>
         </a>
         <a
           href="https://www.facebook.com/vergel.macayan.7/"
@@ -232,9 +304,6 @@ export default function Home() {
           }}
         >
           <i className="fab fa-facebook-f text-2xl"></i>
-          <span className="hidden group-hover:block absolute left-12 bg-black text-white px-2 py-1 rounded">
-            Vergel Macayan
-          </span>
         </a>
         <a
           href="https://github.com/iamvergel"
@@ -250,9 +319,6 @@ export default function Home() {
           }}
         >
           <i className="fab fa-github text-2xl"></i>
-          <span className="hidden group-hover:block absolute left-12 bg-black text-white px-2 py-1 rounded">
-            Vergel Macayan
-          </span>
         </a>
         <a
           href="#"
@@ -267,9 +333,6 @@ export default function Home() {
           }}
         >
           <i className="fab fa-twitter text-2xl"></i>
-          <span className="hidden group-hover:block absolute left-12 bg-black text-white px-2 py-1 rounded">
-            Vergel Macayan
-          </span>
         </a>
         <a
           href="https://t.me/VergelMacayan"
@@ -285,14 +348,11 @@ export default function Home() {
           }}
         >
           <i className="fab fa-telegram-plane text-2xl"></i>
-          <span className="hidden group-hover:block absolute left-12 bg-black text-white px-2 py-1 rounded">
-            Vergel Macayan
-          </span>
         </a>
       </div>
 
       <img
-        src="../assets/images/me.png"
+        src="/portfolio/public/assets/images/me.png"
         alt="me"
         className=" z-3 h-[250px] w-[200px] lg:h-[500px] lg:w-[500px] 2xl:h-[600px] 2xl:w-[600px] object-cover absolute bottom-0 left-[70%] lg:left-[55%] transform -translate-x-1/2"
       />
