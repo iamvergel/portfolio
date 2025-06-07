@@ -16,15 +16,15 @@ export default function Home() {
   }, [isOpen]);
 
   const images = [
-    "/public/assets/images/bg-image.png",
-    "/public/assets/images/bg-image1.png",
-    "/public/assets/images/bg-image5.png",
-    "/public/assets/images/bg-image2.png",
-    "/public/assets/images/bg-image.png",
-    "/public/assets/images/bg-image6.png",
-    "/public/assets/images/bg-image3.png",
-    "/public/assets/images/bg-image4.png",
-    "/public/assets/images/bg-image7.png",
+    "/assets/images/bg-image.png",
+    "/assets/images/bg-image1.png",
+    "/assets/images/bg-image5.png",
+    "/assets/images/bg-image2.png",
+    "/assets/images/bg-image.png",
+    "/assets/images/bg-image6.png",
+    "/assets/images/bg-image3.png",
+    "/assets/images/bg-image4.png",
+    "/assets/images/bg-image7.png",
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -84,7 +84,7 @@ export default function Home() {
           />
         </div>
         <img
-          src="/portfolio/public/assets/images/me.png"
+          src="/assets/images/me.png"
           alt="me"
           className=" z-3 h-[300px] w-[500px] lg:h-[450px]  lg:w-[350px] object-cover absolute bottom-0 left-[72%] lg:left-[53%] transform -translate-x-1/2" data-aos="zoom-in"
         />
