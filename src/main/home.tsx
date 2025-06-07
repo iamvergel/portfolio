@@ -16,15 +16,15 @@ export default function Home() {
   }, [isOpen]);
 
   const images = [
-    "/portfolio/public/assets/images/bg-image.png",
-    "/portfolio/public/assets/images/bg-image1.png",
-    "/portfolio/public/assets/images/bg-image5.png",
-    "/portfolio/public/assets/images/bg-image2.png",
-    "/portfolio/public/assets/images/bg-image.png",
-    "/portfolio/public/assets/images/bg-image6.png",
-    "/portfolio/public/assets/images/bg-image3.png",
-    "/portfolio/public/assets/images/bg-image4.png",
-    "/portfolio/public/assets/images/bg-image7.png",
+    "/public/assets/images/bg-image.png",
+    "/public/assets/images/bg-image1.png",
+    "/public/assets/images/bg-image5.png",
+    "/public/assets/images/bg-image2.png",
+    "/public/assets/images/bg-image.png",
+    "/public/assets/images/bg-image6.png",
+    "/public/assets/images/bg-image3.png",
+    "/public/assets/images/bg-image4.png",
+    "/public/assets/images/bg-image7.png",
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
