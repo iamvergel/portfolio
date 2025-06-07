@@ -309,7 +309,7 @@ export default function Home() {
             <i className="fab fa-instagram text-2xl"></i>
           </a>
           <a
-            href="https://www.facebook.com/vergel.macayan.7/"
+            href="https://www.facebook.com/vergel.macayan.7/" 
             target="_blank"
             className="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center hover:bg-gray-200 transition"
             onMouseEnter={(e) => {
