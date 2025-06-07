@@ -39,10 +39,10 @@ export default function TopNav() {
 
   return (
     <nav
-      className={`fixed top-0 z-5 w-full h-[80px] flex items-center justify-between md:items-center md:justify-center px-5 transition duration-300 ease-in-out ${
+      className={`fixed top-0 z-10 2xl:max-w-[1600px] w-full h-[80px] hover:bg-white flex items-center justify-between md:items-center md:justify-center px-5 transition duration-300 ease-in-out ${
         scroll > 0 ? "bg-white shadow-md" : "bg-transparent"
       }`}
-      id="topnav"
+      id="topnav" data-aos="fade-down"
     >
       <a
         href="/"
@@ -99,7 +99,7 @@ export default function TopNav() {
       </ul>
 
       {menuOpen && (
-        <div className="absolute top-16 left-0 w-96 bg-white shadow-md flex flex-col gap-4 px-5 py-4 text-[14px] uppercase md:hidden">
+        <div className="absolute top-16 left-0 w-full bg-white shadow-md flex flex-col gap-4 px-5 py-4 text-[14px] uppercase md:hidden z-10">
           <a
             href="#main"
             className={`nav-link ${activeLink === "#main" ? "active" : ""} w-26`}
