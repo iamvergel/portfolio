@@ -15,29 +15,29 @@ export default function Home() {
     };
   }, [isOpen]);
 
-  // const images = [
-  //   "/portfolio/public/assets/images/bg-image.png",
-  //   "/portfolio/public/assets/images/bg-image1.png",
-  //   "/portfolio/public/assets/images/bg-image5.png",
-  //   "/portfolio/public/assets/images/bg-image2.png",
-  //   "/portfolio/public/assets/images/bg-image.png",
-  //   "/portfolio/public/assets/images/bg-image6.png",
-  //   "/portfolio/public/assets/images/bg-image3.png",
-  //   "/portfolio/public/assets/images/bg-image4.png",
-  //   "/portfolio/public/assets/images/bg-image7.png",
-  // ];
-
   const images = [
-    "/assets/images/bg-image.png",
-    "/assets/images/bg-image1.png",
-    "/assets/images/bg-image5.png",
-    "/assets/images/bg-image2.png",
-    "/assets/images/bg-image.png",
-    "/assets/images/bg-image6.png",
-    "/assets/images/bg-image3.png",
-    "/assets/images/bg-image4.png",
-    "/assets/images/bg-image7.png",
+    "/portfolio/public/assets/images/bg-image.png",
+    "/portfolio/public/assets/images/bg-image1.png",
+    "/portfolio/public/assets/images/bg-image5.png",
+    "/portfolio/public/assets/images/bg-image2.png",
+    "/portfolio/public/assets/images/bg-image.png",
+    "/portfolio/public/assets/images/bg-image6.png",
+    "/portfolio/public/assets/images/bg-image3.png",
+    "/portfolio/public/assets/images/bg-image4.png",
+    "/portfolio/public/assets/images/bg-image7.png",
   ];
+
+  // const images = [
+  //   "/assets/images/bg-image.png",
+  //   "/assets/images/bg-image1.png",
+  //   "/assets/images/bg-image5.png",
+  //   "/assets/images/bg-image2.png",
+  //   "/assets/images/bg-image.png",
+  //   "/assets/images/bg-image6.png",
+  //   "/assets/images/bg-image3.png",
+  //   "/assets/images/bg-image4.png",
+  //   "/assets/images/bg-image7.png",
+  // ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [prevIndex, setPrevIndex] = useState<number | null>(null);
@@ -96,7 +96,7 @@ export default function Home() {
           />
         </div>
         <img
-          src="/assets/images/me.png"
+          src="/portfolio/public/assets/images/me.png"
           alt="me"
           className=" z-3 h-[300px] w-[500px] lg:h-[450px]  lg:w-[350px] object-cover absolute bottom-0 left-[72%] lg:left-[53%] transform -translate-x-1/2" data-aos="zoom-in"
         />

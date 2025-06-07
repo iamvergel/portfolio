@@ -6,7 +6,8 @@ import "aos/dist/aos.css";
 
 import TopNav from "./main/topnav";
 import Home from "./main/home";
-import About from "./main/about"; // Case-sensitive: About.tsx
+import About from "./main/about"
+import Projects from "./main/projects"
 
 export default function App() {
   useEffect(() => {
@@ -21,6 +22,7 @@ export default function App() {
       <TopNav />
       <Home />
       <About />
+      <Projects />
       {/* 
       <div className="h-96 w-full bg-gradient-to-tr from-[#ffffff] via-[#ffffff] via-[#ffffff] via-[#ffffff] via-[#ffffff] via-[rgba(36,30,37,0)] via-[rgba(36,30,37,0.10)] to-[rgba(70,0,0,1)]"></div> */}
 
