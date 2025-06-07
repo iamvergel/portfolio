@@ -39,7 +39,7 @@ export default function TopNav() {
 
   return (
     <nav
-      className={`fixed top-0 z-10 2xl:max-w-[1600px] w-full h-[80px] hover:bg-white flex items-center justify-between md:items-center md:justify-center px-5 transition duration-300 ease-in-out ${
+      className={`fixed top-0 z-10 2xl:max-w-[1400px] w-full h-[80px] hover:bg-white flex items-center justify-between md:items-center md:justify-center px-5 transition duration-300 ease-in-out ${
         scroll > 0 ? "bg-white shadow-md" : "bg-transparent"
       }`}
       id="topnav" data-aos="fade-down"
@@ -69,7 +69,7 @@ export default function TopNav() {
             href="#about"
             className={`nav-link ${activeLink === "#about" ? "active" : ""}`}
           >
-            About Me
+            About
           </a>
         </li>
         <li>
@@ -77,7 +77,7 @@ export default function TopNav() {
             href="#design"
             className={`nav-link ${activeLink === "#design" ? "active" : ""}`}
           >
-            My Design
+            Design
           </a>
         </li>
         <li>
@@ -85,7 +85,7 @@ export default function TopNav() {
             href="#artworks"
             className={`nav-link ${activeLink === "#artworks" ? "active" : ""}`}
           >
-            My Artworks
+            Artworks
           </a>
         </li>
         <li>
@@ -93,7 +93,7 @@ export default function TopNav() {
             href="#projects"
             className={`nav-link ${activeLink === "#projects" ? "active" : ""}`}
           >
-            My Projects
+            Projects
           </a>
         </li>
       </ul>
@@ -112,28 +112,28 @@ export default function TopNav() {
             className={`nav-link ${activeLink === "#about" ? "active" : ""} w-26`}
             onClick={toggleMenu}
           >
-            About Me
+            About
           </a>
           <a
             href="#design"
             className={`nav-link ${activeLink === "#design" ? "active" : ""} w-26`}
             onClick={toggleMenu}
           >
-            My Design
+            Design
           </a>
           <a
             href="#artworks"
             className={`nav-link ${activeLink === "#artworks" ? "active" : ""} w-26`}
             onClick={toggleMenu}
           >
-            My Artworks
+            Artworks
           </a>
           <a
             href="#projects"
             className={`nav-link ${activeLink === "#projects" ? "active" : ""} w-26`}
             onClick={toggleMenu}
           >
-            My Projects
+            Projects
           </a>
         </div>
       )}

@@ -15,6 +15,18 @@ export default function Home() {
     };
   }, [isOpen]);
 
+  // const images = [
+  //   "/portfolio/public/assets/images/bg-image.png",
+  //   "/portfolio/public/assets/images/bg-image1.png",
+  //   "/portfolio/public/assets/images/bg-image5.png",
+  //   "/portfolio/public/assets/images/bg-image2.png",
+  //   "/portfolio/public/assets/images/bg-image.png",
+  //   "/portfolio/public/assets/images/bg-image6.png",
+  //   "/portfolio/public/assets/images/bg-image3.png",
+  //   "/portfolio/public/assets/images/bg-image4.png",
+  //   "/portfolio/public/assets/images/bg-image7.png",
+  // ];
+
   const images = [
     "/assets/images/bg-image.png",
     "/assets/images/bg-image1.png",
