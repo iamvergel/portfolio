@@ -1,15 +1,38 @@
 // src/App.tsx
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 import TopNav from "./main/topnav";
 import Home from "./main/home";
-import About from "./main/about"
-import Projects from "./main/projects"
+import About from "./main/about";
+import Projects from "./main/projects";
 
 export default function App() {
+  const images = [
+    "/portfolio/public/assets/images/bg-image.png",
+    "/portfolio/public/assets/images/bg-image1.png",
+    "/portfolio/public/assets/images/bg-image5.png",
+    "/portfolio/public/assets/images/bg-image2.png",
+    "/portfolio/public/assets/images/bg-image.png",
+    "/portfolio/public/assets/images/bg-image6.png",
+    "/portfolio/public/assets/images/bg-image3.png",
+    "/portfolio/public/assets/images/bg-image4.png",
+    "/portfolio/public/assets/images/bg-image7.png",
+  ];
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [prevIndex, setPrevIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setPrevIndex(currentIndex);
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 250);
+
+    return () => clearInterval(interval);
+  }, [currentIndex, images.length]);
+
   useEffect(() => {
     AOS.init({
       duration: 700,
@@ -21,15 +44,33 @@ export default function App() {
     <>
       <TopNav />
       <Home />
+
+      <section className="h-[200px] lg:h-[300px] w-full relative" id="about">
+        <div className="absolute w-full h-full top-[-690px] lg:top-[-601px] xl:top-[-677px] hidden md:block lg:block">
+          {prevIndex !== null && (
+            <img
+              src={images[prevIndex]}
+              alt="previous"
+              className="w-[700px] h-[900px] absolute top-0 right-0 transition-opacity duration-200 opacity-0 z-0"
+            />
+          )}
+
+          <img
+            src={images[currentIndex]}
+            alt="current"
+            className="w-[700px] h-[900px] lg:w-[650px] lg:h-[750px] md:w-[700px] md:h-[850px] xl:w-[700px] xl:h-[900px] xl:max-w-[700px] xl:max-h-[900px] object-cover  absolute top-0 right-0 md:right-[-55px] md:top-[30px] lg:right-0 transition-opacity duration-200 opacity-0 z-0 opacity-40 lg:opacity-100"
+          />
+        </div>
+        <div className="hidden md:block lg:block absolute w-full h-[80px] bg-gradient-to-r from-transparent via-[rgba(36,30,37,0)] via-[#460000] via-[#460000] to-[#460000] top-0 left-0 z-[-1]">
+          <div className="absolute w-[830px] xl:max-w-[830px] h-[5px] bg-[#171E25]" style={{ clipPath: "polygon(0% 0, 100% 0, 90% 100%, 0 100%)" }}></div>
+        </div>
+        <div className="absolute px-3 py-2 border-l-4 border-[#171E25] left-[3rem] top-[7rem]">
+          <h3 className="text-4xl font-bold text-[#171E25]">About <span className="text-[#2F465B] font-normal">Me</span></h3>
+        </div>
+      </section>
+
       <About />
       <Projects />
-      {/* 
-      <div className="h-96 w-full bg-gradient-to-tr from-[#ffffff] via-[#ffffff] via-[#ffffff] via-[#ffffff] via-[#ffffff] via-[rgba(36,30,37,0)] via-[rgba(36,30,37,0.10)] to-[rgba(70,0,0,1)]"></div> */}
-
-      {/* <section
-        className="h-screen w-full bg-gradient-to-br from-[#ffffff] via-[#ffffff] via-[#ffffff] via-[#ffffff] via-[#ffffff] via-[rgba(36,30,37,0)] via-[rgba(36,30,37,0.10)] to-[rgba(70,0,0,1)]"
-        id="about"
-      ></section> */}
 
       {/* <section
         className="h-screen w-full bg-gradient-to-br from-[#ffffff] via-[#ffffff] via-[#ffffff] via-[#ffffff] via-[#ffffff] via-[rgba(36,30,37,0)] via-[rgba(36,30,37,0.10)] to-[rgba(70,0,0,1)]"
