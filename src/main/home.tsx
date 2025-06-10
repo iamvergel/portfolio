@@ -15,29 +15,29 @@ export default function Home() {
     };
   }, [isOpen]);
 
-  const images = [
-    "/portfolio/public/assets/images/bg-image.png",
-    "/portfolio/public/assets/images/bg-image1.png",
-    "/portfolio/public/assets/images/bg-image5.png",
-    "/portfolio/public/assets/images/bg-image2.png",
-    "/portfolio/public/assets/images/bg-image.png",
-    "/portfolio/public/assets/images/bg-image6.png",
-    "/portfolio/public/assets/images/bg-image3.png",
-    "/portfolio/public/assets/images/bg-image4.png",
-    "/portfolio/public/assets/images/bg-image7.png",
-  ];
-
   // const images = [
-  //   "/assets/images/bg-image.png",
-  //   "/assets/images/bg-image1.png",
-  //   "/assets/images/bg-image5.png",
-  //   "/assets/images/bg-image2.png",
-  //   "/assets/images/bg-image.png",
-  //   "/assets/images/bg-image6.png",
-  //   "/assets/images/bg-image3.png",
-  //   "/assets/images/bg-image4.png",
-  //   "/assets/images/bg-image7.png",
+  //   "/portfolio/public/assets/images/bg-image.png",
+  //   "/portfolio/public/assets/images/bg-image1.png",
+  //   "/portfolio/public/assets/images/bg-image5.png",
+  //   "/portfolio/public/assets/images/bg-image2.png",
+  //   "/portfolio/public/assets/images/bg-image.png",
+  //   "/portfolio/public/assets/images/bg-image6.png",
+  //   "/portfolio/public/assets/images/bg-image3.png",
+  //   "/portfolio/public/assets/images/bg-image4.png",
+  //   "/portfolio/public/assets/images/bg-image7.png",
   // ];
+
+  const images = [
+    "/assets/images/bg-image.png",
+    "/assets/images/bg-image1.png",
+    "/assets/images/bg-image5.png",
+    "/assets/images/bg-image2.png",
+    "/assets/images/bg-image.png",
+    "/assets/images/bg-image6.png",
+    "/assets/images/bg-image3.png",
+    "/assets/images/bg-image4.png",
+    "/assets/images/bg-image7.png",
+  ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [prevIndex, setPrevIndex] = useState<number | null>(null);
