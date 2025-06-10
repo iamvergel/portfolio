@@ -79,7 +79,7 @@ export default function Home() {
         />
       </div>
 
-      <div className="relative w-full h-full flex justify-center items-center z-1 block sm:hidden md:hidden lg:hidden xl:hidden">
+      <div className="relative w-full h-full flex justify-center items-center z-1 hidden sm:hidden md:hidden lg:hidden xl:hidden">
         <div className="absolute right-0 w-1/2 h-full bg-gradient-to-br from-transparent via-[#460000] via-transparent via-[#460000] to-[#460000]"></div>
         <div className="absolute w-full h-full">
           {prevIndex !== null && (
@@ -266,9 +266,9 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="absolute top-0 sm:top-0 md:top-10 lg:top-[8rem] w-full h-screen md:h-[500px] md:w-[600px] lg:h-[400px] lg:w-[700px] z-4 px-4 lg:px-12 flex flex-col justify-center ">
+      <div className="absolute top-[2rem] sm:top-0 md:top-[0rem] lg:max-top-[0rem] w-full h-[650px] z-4 px-6 md:px-12 lg:px-12 flex flex-col justify-center ">
         <div
-          className="z-2 text-[#171E25] w-full lg:w[400px] border-l-4 border-[#171E25] flex flex-col justify-center items-start px-4 mt-10 z-[-1]"
+          className="z-2 text-[#171E25] w-full border-l-4 border-[#171E25] flex flex-col justify-center items-start px-4 mt-10 z-[-1]"
           id="info"
           data-aos="fade-right"
         >
@@ -276,22 +276,22 @@ export default function Home() {
             HI I'M
           </p>
           <h1
-            className="text-[30px] sm:text-[50px] md:text-[50px] lg:text-[65px] font-bold uppercase leading-8 sm:leading-10 lg:leading-14"
+            className="text-[50px] sm:text-[60px] md:text-[65px] lg:text-[65px] font-bold uppercase leading-10 lg:leading-14 sm:leading-12 lg:leading-14"
             style={{ textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)" }}
           >
             Vergel{" "}
             <span className="text-[#2F465B] font-normal">
               {" "}
-              Ocado <br className=" hidden sm:hidden md:block" /> Macayan{" "}
+              Ocado <br /> Macayan{" "}
             </span>
           </h1>
-          <p className="pt-3 lg:pt-5 capitalize font-semibold text-[12px] lg:text-[14px]  lg:pr-0">
+          <p className="pt-3 lg:pt-5 capitalize font-semibold text-[14px] lg:text-[14px]  lg:pr-0">
             Frontend Developer · Visual Artist · UI/UX Designer
           </p>
         </div>
 
         <div
-          className="z-2 text-[#171E25] text-[14px] text-justify px-2 pt-8 w-full sm:w-[80%] md:w-[80%] lg:w-[500px] lg:pt-10"
+          className="z-2 text-[#171E25] text-[14px] text-justify px-2 pt-8 w-full sm:w-[80%] md:w-[80%] lg:w-[500px] xl:w-[600px] lg:pt-10"
           data-aos="fade-right"
           data-aos-delay="200"
         >
@@ -303,7 +303,7 @@ export default function Home() {
           strive to create impactful digital experiences.
         </div>
         
-        <div className="absolute lg:relative top-[33rem] sm:top-[30rem] md:top-[26.5rem] lg:top-[2rem] pt-1 left-[1rem] lg:left-[0rem] flex flex-col md:flex-row items-center justify-start gap-5" data-aos="fade-right" data-aos-delay="400">
+        <div className="relative top-[2rem] pt-1 left-[0rem] lg:left-[0rem] flex flex-col md:flex-row items-start justify-start gap-5 z-3" data-aos="fade-right" data-aos-delay="400">
           <button
             className="w-[200px] md:w-[300px] lg:w-[200px] z-3 bg-[#171E25] hover:bg-[#2F465B] text-white font-semibold py-1 uppercase pl-4 pr-10 hover:border-[#2F465B]"
             data-aos-delay="300"

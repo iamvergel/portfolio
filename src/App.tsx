@@ -45,8 +45,8 @@ export default function App() {
       <TopNav />
       <Home />
 
-      <section className="h-[200px] lg:h-[300px] w-full relative" id="about">
-        <div className="absolute w-full h-full top-[-690px] lg:top-[-601px] xl:top-[-677px] hidden md:block lg:block">
+      <section className="h-[200px] md:h-[200px] lg:h-[300px] w-full relative" id="about">
+        <div className="absolute w-full h-full top-[-800px] sm:top-[-800px] md:top-[-583px] lg:top-[-562px] xl:top-[-630px] block md:block lg:block">
           {prevIndex !== null && (
             <img
               src={images[prevIndex]}
@@ -58,13 +58,13 @@ export default function App() {
           <img
             src={images[currentIndex]}
             alt="current"
-            className="w-[700px] h-[900px] lg:w-[650px] lg:h-[750px] md:w-[700px] md:h-[850px] xl:w-[700px] xl:h-[900px] xl:max-w-[700px] xl:max-h-[900px] object-cover  absolute top-0 right-0 md:right-[-55px] md:top-[30px] lg:right-0 transition-opacity duration-200 opacity-0 z-0 opacity-40 lg:opacity-100"
+            className="w-[650px] h-[750px]  md:w-[650px] md:h-[750px] lg:w-[650px] lg:h-[700px] xl:w-[720px] xl:h-[800px] xl:max-w-[750px] 2xl:max-h-[850px] object-cover absolute top-0 right-0 transition-opacity duration-200 opacity-0 z-0 opacity-40 md:opacity-100 lg:opacity-100"
           />
         </div>
         <div className="hidden md:block lg:block absolute w-full h-[80px] bg-gradient-to-r from-transparent via-[rgba(36,30,37,0)] via-[#460000] via-[#460000] to-[#460000] top-0 left-0 z-[-1]">
           <div className="absolute w-[830px] xl:max-w-[830px] h-[5px] bg-[#171E25]" style={{ clipPath: "polygon(0% 0, 100% 0, 90% 100%, 0 100%)" }}></div>
         </div>
-        <div className="absolute px-3 py-2 border-l-4 border-[#171E25] left-[3rem] top-[7rem]">
+        <div className="absolute px-3 py-2 border-l-4 border-[#171E25] left-[3rem] top-[7rem] xl:top-[8rem]">
           <h3 className="text-4xl font-bold text-[#171E25]">About <span className="text-[#2F465B] font-normal">Me</span></h3>
         </div>
       </section>
