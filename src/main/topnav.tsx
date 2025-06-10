@@ -39,14 +39,14 @@ export default function TopNav() {
 
   return (
     <nav
-      className={`fixed top-0 z-[999] 2xl:max-w-[1400px] w-full h-[80px] hover:bg-white flex items-center justify-between md:items-center md:justify-center px-5 transition duration-300 ease-in-out ${
+      className={`fixed top-0 z-[999] xl:max-w-[1400px] w-full h-[80px] hover:bg-white flex items-center justify-between md:items-center md:justify-center px-5 transition duration-300 ease-in-out ${
         scroll > 0 ? "bg-white shadow-md" : "bg-transparent"
       }`}
-      id="topnav" data-aos="fade-down"
+      id="topnav" 
     >
       <a
         href="/"
-        className="text-xl font-semibold text-[#171E25] hover:text-[#2F465B] px-1"
+        className="text-xl font-semibold text-[#171E25] hover:text-[#2F465B] px-1" data-aos="fade-down"
       >
         VOM/
       </a>
@@ -55,7 +55,7 @@ export default function TopNav() {
         <i className="fa-solid fa-bars"></i>
       </button>
 
-      <ul className="hidden md:flex md:justify-center md:align-center w-full gap-12 text-[12px] uppercase">
+      <ul className="hidden md:flex md:justify-center md:align-center w-full gap-12 text-[12px] uppercase" data-aos="fade-down" data-aos-delay="100">
         <li>
           <a
             href="#main"

@@ -14,6 +14,7 @@ export default function Home() {
       document.body.style.overflow = "";
     };
   }, [isOpen]);
+  
 
   // const images = [
   //   "/portfolio/public/assets/images/bg-image.png",
@@ -27,33 +28,33 @@ export default function Home() {
   //   "/portfolio/public/assets/images/bg-image7.png",
   // ];
 
-  const images = [
-    "/assets/images/bg-image.png",
-    "/assets/images/bg-image1.png",
-    "/assets/images/bg-image5.png",
-    "/assets/images/bg-image2.png",
-    "/assets/images/bg-image.png",
-    "/assets/images/bg-image6.png",
-    "/assets/images/bg-image3.png",
-    "/assets/images/bg-image4.png",
-    "/assets/images/bg-image7.png",
-  ];
+  // const images = [
+  //   "/assets/images/bg-image.png",
+  //   "/assets/images/bg-image1.png",
+  //   "/assets/images/bg-image5.png",
+  //   "/assets/images/bg-image2.png",
+  //   "/assets/images/bg-image.png",
+  //   "/assets/images/bg-image6.png",
+  //   "/assets/images/bg-image3.png",
+  //   "/assets/images/bg-image4.png",
+  //   "/assets/images/bg-image7.png",
+  // ];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [prevIndex, setPrevIndex] = useState<number | null>(null);
+  // const [currentIndex, setCurrentIndex] = useState(0);
+  // const [prevIndex, setPrevIndex] = useState<number | null>(null);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setPrevIndex(currentIndex);
-      setCurrentIndex((prev) => (prev + 1) % images.length);
-    }, 250);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setPrevIndex(currentIndex);
+  //     setCurrentIndex((prev) => (prev + 1) % images.length);
+  //   }, 250);
 
-    return () => clearInterval(interval);
-  }, [currentIndex]);
+  //   return () => clearInterval(interval);
+  // }, [currentIndex]);
 
   return (
     <section
-      className="xl:max-w-[1400px] xl:max-h-[650px] w-full h-[800px] md:h-screen lg:h-screen "
+      className="xl:max-w-[1400px] xl:max-h-[650px] w-full h-[750px] md:h-screen lg:h-screen overflow-hidden"
       id="main"
     >
       <div className="absolute left-15 top-[45rem] lg:top-[9rem] transform -translate-y-1/2 gap-0 h-28 hidden">
@@ -79,7 +80,9 @@ export default function Home() {
         />
       </div>
 
-      <div className="relative w-full h-full flex justify-center items-center z-1 hidden sm:hidden md:hidden lg:hidden xl:hidden">
+      <div className="relative right-0 w-full h-full bg-gradient-to-br from-transparent via-70% via-transparent to-[#460000]"></div>
+
+      {/* <div className="relative w-full h-full flex justify-center items-center z-1 hidden sm:hidden md:hidden lg:hidden xl:hidden">
         <div className="absolute right-0 w-1/2 h-full bg-gradient-to-br from-transparent via-[#460000] via-transparent via-[#460000] to-[#460000]"></div>
         <div className="absolute w-full h-full">
           {prevIndex !== null && (
@@ -137,9 +140,7 @@ export default function Home() {
                 }}
               >
                 <i className="fab fa-instagram text-2xl"></i>
-                <span className="hidden text-sm px-2">
-                  @vergel_macayan
-                </span>
+                <span className="hidden text-sm px-2">@vergel_macayan</span>
               </a>
               <a
                 href="https://www.facebook.com/vergel.macayan.7/"
@@ -264,9 +265,9 @@ export default function Home() {
             <div className="md:w-[300px] md:h-[300px] lg:w-[320px] lg:h-[320px] rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-[rgba(36,30,37,0.2)] via-[rgba(36,30,37,0.10)] to-[rgba(70,0,0,1)]"></div>
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <div className="absolute top-[2rem] sm:top-0 md:top-[0rem] lg:max-top-[0rem] w-full h-[650px] z-4 px-6 md:px-12 lg:px-12 flex flex-col justify-center ">
+      <div className="absolute top-[4rem] sm:top-0 md:top-[0rem] lg:max-top-[0rem] w-full h-[650px] z-4 px-6 md:px-12 lg:px-12 flex flex-col justify-center ">
         <div
           className="z-2 text-[#171E25] w-full border-l-4 border-[#171E25] flex flex-col justify-center items-start px-4 mt-10 z-[-1]"
           id="info"
@@ -302,10 +303,14 @@ export default function Home() {
           solid foundation in coding and a dedication to continuous learning, I
           strive to create impactful digital experiences.
         </div>
-        
-        <div className="relative top-[2rem] pt-1 left-[0rem] lg:left-[0rem] flex flex-col md:flex-row items-start justify-start gap-5 z-3" data-aos="fade-right" data-aos-delay="400">
+
+        <div
+          className="relative top-[2rem] pt-1 left-[0rem] lg:left-[0rem] flex flex-col md:flex-row items-start justify-start gap-5 z-3"
+          data-aos="fade-right"
+          data-aos-delay="400"
+        >
           <button
-            className="w-[200px] md:w-[300px] lg:w-[200px] z-3 bg-[#171E25] hover:bg-[#2F465B] text-white font-semibold py-1 uppercase pl-4 pr-10 hover:border-[#2F465B]"
+            className="w-[200px] md:w-[300px] lg:w-[200px] z-3 bg-[#171E25] hover:bg-[#2F465B] text-white font-semibold py-1 uppercase pl-4 pr-10 hover:border-[#2F465B] transition-all duration-200 hover:w-[250px] hover:pr-20"
             data-aos-delay="300"
             style={{ clipPath: "polygon(1% 0, 100% 0, 87% 100%, 0 100%)" }}
             onClick={(e) => {
@@ -318,10 +323,10 @@ export default function Home() {
           <div className="flex items-center justify-start gap-3 w-full lg:w-auto pl-0 md:pl-3 lg:pl-0">
             <a
               href="mailto:vergelmacayan7@gmail.com"
-              className="w-10 h-10 rounded-full bg-white text-[#171E25] flex items-center justify-center hover:bg-gray-200 transition duration-200 overflow-hidden"
+              className="w-10 h-10 rounded-full bg-white text-[#171E25] flex items-center justify-center transition-all  duration-200 overflow-hidden"
               onMouseEnter={(e) => {
                 e.currentTarget.style.width = "auto";
-                e.currentTarget.style.padding = "0.5rem";
+                e.currentTarget.style.padding = "0rem";
                 e.currentTarget.style.background = "#171E25";
                 e.currentTarget.style.color = "white";
 
@@ -344,18 +349,18 @@ export default function Home() {
                 if (text) text.style.display = "none";
               }}
             >
-              <i className="fas fa-envelope text-xl"></i>
-              <span className="hidden text-sm px-2">
+              <i className="fas fa-envelope text-xl px-3"></i>
+              <span className="hidden text-sm pr-3">
                 vergelmacayan7@gmail.com
               </span>
             </a>
 
             <a
               href="tel:+639363007584"
-              className="w-10 h-10 rounded-full bg-white text-[#171E25] flex items-center justify-center hover:bg-gray-200 transition"
+              className="w-10 h-10 rounded-full bg-white text-[#171E25] flex items-center justify-center transition-all duration-200 overflow-hidden"
               onMouseEnter={(e) => {
                 e.currentTarget.style.width = "auto";
-                e.currentTarget.style.padding = "0.5rem";
+                e.currentTarget.style.padding = "0rem";
                 e.currentTarget.style.background = "#171E25";
                 e.currentTarget.style.color = "white";
 
@@ -378,10 +383,8 @@ export default function Home() {
                 if (text) text.style.display = "none";
               }}
             >
-              <i className="fas fa-phone-alt text-xl"></i>
-              <span className="hidden text-sm px-2">
-                +639363007584
-              </span>
+              <i className="fas fa-phone-alt text-x px-3"></i>
+              <span className="hidden text-sm pr-3">+639363007584</span>
             </a>
           </div>
         </div>
@@ -470,7 +473,7 @@ export default function Home() {
           )}
         </div>
         <div
-          className="flex md:hidden absolute gap-5 bg-[#171E25] py-2 z-1 top-[11rem] left-[-1rem] w-full justify-center items-center"
+          className="flex hidden md:hidden absolute gap-5 bg-[#171E25] py-2 z-1 top-[11rem] left-[-1rem] w-full justify-center items-center"
           data-aos="fade-up"
         >
           <a
