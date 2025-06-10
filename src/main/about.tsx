@@ -26,7 +26,7 @@ export default function About() {
           <div className="relative col-span-1 lg:col-span-1 h-full w-full">
             <div className="relative h-full w-full ">
               <img
-                src="/portfolio/public/assets/images/me.png"
+                src="/assets/images/me.png"
                 alt="me"
                 className=" z-3 h-[300px] w-auto sm:h-[350px] md:w-[280px] md:h-[400px] lg:h-[450px] lg:w-[300px] object-cover relative lg:absolute top-[50%] left-[35%] md:top-[50%] md:left-[30%] lg:top-[63.5%] lg:left-[40%] xl:top-[56%] transform -translate-x-1/2 -translate-y-1/2"
                 data-aos="zoom-in"
@@ -231,7 +231,7 @@ export default function About() {
           <div className="col-span-1 lg:col-span-2 p-2 lg:p-5 text-[14px] leading-7 text-justify relative">
             <div className="p-5 lg:p-5">
               <p className="pb-3" data-aos="fade-left" data-aos-delay="100">
-                Hi 👋, I'm Vergel Macayan. <br />
+                Hi, I'm Vergel Macayan. <br />
                 <br />
                 I'm a Bachelor of Science in Computer Science student with a
                 strong passion for technology and innovation. I'm also an artist
@@ -293,14 +293,14 @@ export default function About() {
                       <div className="w-full h-full grid grid-cols-1 lg:grid-cols-2 p-5">
                         <div className="w-full h-full flex items-center justify-centerp pb-5 p-1">
                           <img
-                            src="/portfolio/public/assets/resume/2.png"
+                            src="/assets/resume/2.png"
                             alt="page 1"
                             className="w-full h-full object-cover"
                           />
                         </div>
                         <div className="w-full h-full flex items-center justify-centerp pb-5 p-1">
                           <img
-                            src="/portfolio/public/assets/resume/3.png"
+                            src="/assets/resume/3.png"
                             alt="page 1"
                             className="w-full h-full object-cover"
                           />
@@ -309,7 +309,7 @@ export default function About() {
 
                       <div className="">
                         <a
-                          href="/portfolio/public/assets/resume/MacayanCV.pdf"
+                          href="/assets/resume/MacayanCV.pdf"
                           download
                         >
                           <button className="fixed bottom-10 right-10 text-white bg-[#171E25]/90 px-5 transition-all duration-300 rounded-sm hover:bg-[#171E25] text-[14px] transform hover:scale-105">
