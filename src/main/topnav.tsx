@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 export default function TopNav() {
   const [scroll, setScroll] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState("#about");
+  const [activeLink, setActiveLink] = useState("#main");
 
   useEffect(() => {
     const handleScroll = () => setScroll(window.scrollY);
@@ -17,7 +17,7 @@ export default function TopNav() {
     const sections = document.querySelectorAll("section");
     const options = {
       root: null,
-      threshold: 0.5,
+      threshold: 0.3,
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -80,8 +80,8 @@ export default function TopNav() {
         </li>
         <li>
           <a
-            href="#artworks"
-            className={`nav-link ${activeLink === "#artworks" ? "active" : ""}`}
+            href="#artwork"
+            className={`nav-link ${activeLink === "#artwork" ? "active" : ""}`}
           >
             Artworks
           </a>
@@ -120,8 +120,8 @@ export default function TopNav() {
             Design
           </a>
           <a
-            href="#artworks"
-            className={`nav-link ${activeLink === "#artworks" ? "active" : ""} w-26`}
+            href="#artwork"
+            className={`nav-link ${activeLink === "#artwork" ? "active" : ""} w-26`}
             onClick={toggleMenu}
           >
             Artworks
@@ -138,3 +138,4 @@ export default function TopNav() {
     </nav>
   );
 }
+
