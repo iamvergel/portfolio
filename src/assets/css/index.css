@@ -63,4 +63,7 @@
   font-weight: bold;
 }
 
-
+.yarl__portal .yarl__container {
+  background-color: rgba(0, 0, 0, 0.80) !important;
+  transition: background-color 0.4s ease-in-out;
+}

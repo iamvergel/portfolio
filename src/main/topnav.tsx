@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 export default function TopNav() {
   const [scroll, setScroll] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState("#main");
+  const [activeLink, setActiveLink] = useState("#about");
 
   useEffect(() => {
     const handleScroll = () => setScroll(window.scrollY);
@@ -13,17 +13,15 @@ export default function TopNav() {
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
-  // IntersectionObserver to track the active section
   useEffect(() => {
     const sections = document.querySelectorAll("section");
     const options = {
-      root: null, // Use the viewport as the root
-      threshold: 0.5, // 50% of the section needs to be visible
+      root: null,
+      threshold: 0.5,
     };
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        // Only update activeLink when the section is in view
         if (entry.isIntersecting) {
           setActiveLink(`#${entry.target.id}`);
         }

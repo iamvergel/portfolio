@@ -13,7 +13,6 @@ const repoImages: { [key: string]: string } = {
   "portfolio-site": "/images/portfolio-site.png",
   "weather-app": "/images/weather-app.png",
   "chat-app": "/images/chat-app.png",
-  // Add more as needed
 };
 
 export default function Projects() {
@@ -32,7 +31,7 @@ export default function Projects() {
   }, []);
 
   return (
-    <section id="projects" className="py-12 px-4 bg-gray-100 text-black">
+    <section id="projects" className="py-12 px-4 bg-gray-100 text-black relative">
       <h2 className="text-4xl font-bold mb-10 text-center">Projects</h2>
       <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 max-w-6xl mx-auto">
         {repos.map((repo) => (
