@@ -20,11 +20,11 @@ const designs: Design[] = [
     id: 1,
     title: "Student Portal ICC Design",
     images: [
-      "/assets/design/design1/page1.png",
-      "/assets/design/design1/page2.png",
-      "/assets/design/design1/page3.png",
-      "/assets/design/design1/page4.png",
-      "/assets/design/design1/page5.png",
+      "/portfolio/public/assets/design/design1/page1.png",
+      "/portfolio/public/assets/design/design1/page2.png",
+      "/portfolio/public/assets/design/design1/page3.png",
+      "/portfolio/public/assets/design/design1/page4.png",
+      "/portfolio/public/assets/design/design1/page5.png",
     ],
     prototypeUrl: "",
     link: "https://embed.figma.com/design/x0NJBu5uWFLBzgmQCthjCF/STUDENT_PORTAL_ICC?node-id=0-1&embed-host=share",
@@ -33,10 +33,10 @@ const designs: Design[] = [
     id: 2,
     title: "EJ Traing Center Design",
     images: [
-      "/assets/design/design2/page1.png",
-      "/assets/design/design2/page2.png",
-      "/assets/design/design2/page3.png",
-      "/assets/design/design2/page4.png",
+      "/portfolio/public/assets/design/design2/page1.png",
+      "/portfolio/public/assets/design/design2/page2.png",
+      "/portfolio/public/assets/design/design2/page3.png",
+      "/portfolio/public/assets/design/design2/page4.png",
     ],
     prototypeUrl:
       "https://embed.figma.com/proto/G4xVMPMzPoz11jq2pTsyjH/GROUP-5---DESIGN---PROTOTYPE?page-id=0%3A1&node-id=115-4334&viewport=367%2C-239%2C0.15&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=115%3A4334&show-proto-sidebar=1&embed-host=share",
@@ -46,10 +46,10 @@ const designs: Design[] = [
     id: 3,
     title: "Old Manila Design",
     images: [
-      "/assets/design/design3/page1.png",
-      "/assets/design/design3/page2.png",
-      "/assets/design/design3/page3.png",
-      "/assets/design/design3/page4.png",
+      "/portfolio/public/assets/design/design3/page1.png",
+      "/portfolio/public/assets/design/design3/page2.png",
+      "/portfolio/public/assets/design/design3/page3.png",
+      "/portfolio/public/assets/design/design3/page4.png",
     ],
     prototypeUrl:
       "https://embed.figma.com/proto/tUBRWjFTLAyiU3z5pQxeog/OldManila_UiDesign?page-id=87%3A8&node-id=188-6385&viewport=-2416%2C1286%2C0.66&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=188%3A6385&show-proto-sidebar=1&embed-host=share",
@@ -58,7 +58,7 @@ const designs: Design[] = [
   {
     id: 4,
     title: "My First Portfolio Design",
-    images: ["/assets/design/design4/page1.png"],
+    images: ["/portfolio/public/assets/design/design4/page1.png"],
     prototypeUrl: "",
     link: "",
   },
@@ -66,8 +66,8 @@ const designs: Design[] = [
     id: 5,
     title: "Merciful Design",
     images: [
-      "/assets/design/design5/page1.png",
-      "/assets/design/design5/page2.png",
+      "/portfolio/public/assets/design/design5/page1.png",
+      "/portfolio/public/assets/design/design5/page2.png",
     ],
     prototypeUrl: "",
     link: "",
@@ -76,8 +76,8 @@ const designs: Design[] = [
     id: 6,
     title: "Phanthom Troupe Hunter x Hunter Design",
     images: [
-      "/assets/design/design6/page1.jpg",
-      "/assets/design/design6/page2.jpg",
+      "/portfolio/public/assets/design/design6/page1.jpg",
+      "/portfolio/public/assets/design/design6/page2.jpg",
     ],
     prototypeUrl: "",
     link: "",
@@ -86,8 +86,8 @@ const designs: Design[] = [
     id: 7,
     title: "Activity Brew Haven And Personal Logo Design",
     images: [
-      "/assets/design/design7/page1.jpg",
-      "/assets/design/design7/page2.jpg",
+      "/portfolio/public/assets/design/design7/page1.jpg",
+      "/portfolio/public/assets/design/design7/page2.jpg",
     ],
     prototypeUrl: "",
     link: "",
@@ -96,8 +96,8 @@ const designs: Design[] = [
     id: 8,
     title: "Activity UI and UX Design",
     images: [
-      "/assets/design/design8/page1.jpg",
-      "/assets/design/design8/page2.jpg",
+      "/portfolio/public/assets/design/design8/page1.jpg",
+      "/portfolio/public/assets/design/design8/page2.jpg",
     ],
     prototypeUrl: "",
     link: "",
@@ -143,7 +143,7 @@ export default function Design() {
 
       <div className="relative w-full h-[2100px] sm:h-[1100px] md:h-[1100px] lg:h-[900px] bg-gradient-to-bl from-transparent via-70% via-transparent to-[#460000]/70">
         <img
-          src="/assets/images/design-bg.png"
+          src="/portfolio/public/assets/images/design-bg.png"
           alt="logo"
           className="w-[300px] sm:w-[380px] md:w-[400px] xl:w-[500px] h-auto absolute bottom-0 right-0 lg:bottom-0 lg:left-0 grayscale-30 contrast-120 z-[1] hidden lg:block"
         />

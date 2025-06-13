@@ -17,15 +17,15 @@ export default function Home() {
   
 
   // const images = [
-  //   "/assets/images/bg-image.png",
-  //   "/assets/images/bg-image1.png",
-  //   "/assets/images/bg-image5.png",
-  //   "/assets/images/bg-image2.png",
-  //   "/assets/images/bg-image.png",
-  //   "/assets/images/bg-image6.png",
-  //   "/assets/images/bg-image3.png",
-  //   "/assets/images/bg-image4.png",
-  //   "/assets/images/bg-image7.png",
+  //   "/portfolio/public/assets/images/bg-image.png",
+  //   "/portfolio/public/assets/images/bg-image1.png",
+  //   "/portfolio/public/assets/images/bg-image5.png",
+  //   "/portfolio/public/assets/images/bg-image2.png",
+  //   "/portfolio/public/assets/images/bg-image.png",
+  //   "/portfolio/public/assets/images/bg-image6.png",
+  //   "/portfolio/public/assets/images/bg-image3.png",
+  //   "/portfolio/public/assets/images/bg-image4.png",
+  //   "/portfolio/public/assets/images/bg-image7.png",
   // ];
 
   // const images = [
@@ -59,22 +59,22 @@ export default function Home() {
     >
       <div className="absolute left-15 top-[45rem] lg:top-[9rem] transform -translate-y-1/2 gap-0 h-28 hidden">
         <img
-          src="/assets/images/top-image1.png"
+          src="/portfolio/public/assets/images/top-image1.png"
           alt="image1"
           className="w-auto object-cover hover:scale-110 transition duration-300"
         />
         <img
-          src="/assets/images/top-image2.png"
+          src="/portfolio/public/assets/images/top-image2.png"
           alt="image1"
           className="w-auto object-cover hover:scale-110 transition duration-300"
         />
         <img
-          src="/assets/images/top-image3.png"
+          src="/portfolio/public/assets/images/top-image3.png"
           alt="image1"
           className="w-auto object-cover hover:scale-110 transition duration-300"
         />
         <img
-          src="/assets/images/top-image4.png"
+          src="/portfolio/public/assets/images/top-image4.png"
           alt="image1"
           className="w-auto object-cover hover:scale-110 transition duration-300"
         />
@@ -100,7 +100,7 @@ export default function Home() {
           />
         </div>
         <img
-          src="/assets/images/me.png"
+          src="/portfolio/public/assets/images/me.png"
           alt="me"
           className=" z-3 h-[300px] w-auto sm:h-[350px] md-hidden md:w-[280px] md:h-[400px] lg:block lg:h-[450px] lg:w-[300px] object-cover absolute bottom-0 left-[70%] md:left-[68%] lg:left-[51.5%] transform -translate-x-1/2"
           data-aos="zoom-in"

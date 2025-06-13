@@ -31,7 +31,7 @@ export default function Projects() {
   }, []);
 
   return (
-    <section id="projects" className="py-12 px-4 bg-gray-100 text-black relative">
+    <section id="projects" className="py-12 px-4 bg-gray-100 text-black ">
       <h2 className="text-4xl font-bold mb-10 text-center">Projects</h2>
       <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 max-w-6xl mx-auto">
         {repos.map((repo) => (

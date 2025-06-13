@@ -8,19 +8,20 @@ import TopNav from "./main/topnav";
 import Home from "./main/home";
 import About from "./main/about";
 import Design from "./main/design";
+import Artworks from "./main/artwork";
 import Projects from "./main/projects";
 
 export default function App() {
   const images = [
-    "/assets/images/bg-image.png",
-    "/assets/images/bg-image1.png",
-    "/assets/images/bg-image5.png",
-    "/assets/images/bg-image2.png",
-    "/assets/images/bg-image.png",
-    "/assets/images/bg-image6.png",
-    "/assets/images/bg-image3.png",
-    "/assets/images/bg-image4.png",
-    "/assets/images/bg-image7.png",
+    "/portfolio/public/assets/images/bg-image.png",
+    "/portfolio/public/assets/images/bg-image1.png",
+    "/portfolio/public/assets/images/bg-image5.png",
+    "/portfolio/public/assets/images/bg-image2.png",
+    "/portfolio/public/assets/images/bg-image.png",
+    "/portfolio/public/assets/images/bg-image6.png",
+    "/portfolio/public/assets/images/bg-image3.png",
+    "/portfolio/public/assets/images/bg-image4.png",
+    "/portfolio/public/assets/images/bg-image7.png",
   ];
 
   // const images = [
@@ -65,7 +66,7 @@ export default function App() {
       >
         <div className="relative w-[600px] hidden md-hidden  lg:right-[-50rem] xl:right-[-68rem] lg:top-[-36rem] lg:hidden">
           <img
-            src="/assets/images/bg-moon.png"
+            src="/portfolio/public/assets/images/bg-moon.png"
             alt=""
             className="w-full h-full rounded-full object-cover shadow-[#8a0303] shadow-2xl opacity-80 bg-red-500"
           />
@@ -109,6 +110,7 @@ export default function App() {
 
       <About />
       <Design />
+      <Artworks />
       <Projects />
 
       {/* <section
