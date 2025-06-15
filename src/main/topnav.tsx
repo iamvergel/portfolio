@@ -108,6 +108,15 @@ export default function TopNav() {
             Testimonial
           </a>
         </li>
+        <li>
+          <a
+            href="#comment"
+            className={`nav-link ${activeLink === "#comment" ? "active" : ""}`}
+            onClick={() => setActiveLink("#comment")}
+          >
+            Comment
+          </a>
+        </li>
       </ul>
 
       {menuOpen && (
@@ -153,6 +162,13 @@ export default function TopNav() {
             onClick={() => { toggleMenu(); setActiveLink("#testimonial"); }}
           >
             Testimonial
+          </a>
+          <a
+            href="#comment"
+            className={`nav-link ${activeLink === "#comment" ? "active" : ""} w-26`}
+            onClick={() => { toggleMenu(); setActiveLink("#comment"); }}
+          >
+            Comment
           </a>
         </div>
       )}

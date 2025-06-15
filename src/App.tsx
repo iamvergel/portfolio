@@ -11,6 +11,7 @@ import Design from "./main/design";
 import Artwork from "./main/artwork";
 import Projects from "./main/projects";
 import Testimonials from "./main/testimonial";
+import Comment from "./main/comment";
 import Footer from "./main/footer";
 
 export default function App() {
@@ -175,6 +176,7 @@ export default function App() {
 
       <Projects />
       <Testimonials />
+      <Comment />
       <Footer />
 
       {/* <section>

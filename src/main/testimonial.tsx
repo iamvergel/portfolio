@@ -130,7 +130,7 @@ export default function Testimonial() {
 
   return (
     <section
-      className="w-full xl:max-w-[1400px] mx-auto min-h-[800px] relative overflow-hidden"
+      className="w-full xl:max-w-[1400px] mx-auto min-h-[700px] relative overflow-hidden "
       id="testimonial"
     >
       <div className="text-center mb-10 w-full py-10"></div>
@@ -139,7 +139,7 @@ export default function Testimonial() {
         style={{ clipPath: "polygon(0 0, 100% 0, 90% 100%, 10% 100%)" }}
       >
         <h2 className="text-4xl font-bold text-white mb-2">Testimonials</h2>
-        <p className="text-white text-xl">See what others have said</p>
+        <p className="text-white text-lg">See what others have said</p>
       </div>
 
       <div className="w-full mx-auto grid grid-cols-1 md:grid-cols-1 gap-5 px-10 py-10 flex justify-center">
@@ -218,7 +218,7 @@ export default function Testimonial() {
               )}
               <input
                 type="text"
-                placeholder="Name"
+                placeholder="Full Name"
                 className="w-full p-2 border border-gray-300 rounded"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
@@ -226,7 +226,7 @@ export default function Testimonial() {
               />
               <input
                 type="email"
-                placeholder="Email"
+                placeholder="Email ex: vergelmacayan@gmail.com"
                 className="w-full p-2 border border-gray-300 rounded"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -234,14 +234,14 @@ export default function Testimonial() {
               />
               <input
                 type="text"
-                placeholder="Position"
+                placeholder="Work Position / Work Role"
                 className="w-full p-2 border border-gray-300 rounded"
                 value={position}
                 onChange={(e) => setPosition(e.target.value)}
                 required
               />
               <textarea
-                placeholder="Your Testimonial"
+                placeholder="Your Testimonial About to @Vergel Macayan"
                 rows={4}
                 className="w-full p-2 border border-gray-300 rounded"
                 value={message}
@@ -280,7 +280,7 @@ export default function Testimonial() {
       )}
 
       <div
-        className="text-center bg-[#171E25] mb-10 w-full py-10"
+        className="text-center bg-[#171E25]/90 mb-10 w-full py-10"
         style={{ clipPath: "polygon(10% 0, 90% 0, 100% 100%, 0% 100%)" }}
       ></div>
     </section>
