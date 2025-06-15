@@ -169,7 +169,7 @@ export default function Testimonial() {
                 </span>
               </h4>
 
-              <p className="text-sm text-[#2F465B]">{t.email}</p>
+              <p className="text-sm text-[#2F465B] pt-1">{t.email}</p>
               <p
                 className={`text-sm text-[#2F465B]/80 absolute bottom-4 ${
                   i % 2 === 0 ? "right-4" : "left-4"

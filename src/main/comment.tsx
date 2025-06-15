@@ -117,12 +117,12 @@ export default function Comment() {
           ></div>
         </div>
         <h2 className="text-4xl font-bold text-[#2F465B] mb-2">Comments</h2>
-        <p className="text-[#2F465B] text-md">
+        <p className="text-[#2F465B] text-md pt-3 sm:pt-0">
           Leave a comment about my website and let me know what you think.
         </p>
       </div>
 
-      <div className="w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 px-10 p-10">
+      <div className="w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 px-3 lg:px-10 p-10">
         <div className="flex flex-col gap-5 max-h-[500px] overflow-y-auto  pr-2">
           {comments.map((c, i) => (
             <div
@@ -140,7 +140,7 @@ export default function Comment() {
           ))}
         </div>
 
-        <div className="flex justify-center items-center py-5 bg-white rounded relative">
+        <div className="flex justify-center items-center py-5 bg-white rounded relative px-5">
           <form
             onSubmit={handleSubmit}
             className="space-y-4 flex flex-col gap-4 w-full max-w-md relative"
@@ -159,7 +159,7 @@ export default function Comment() {
             <input
               type="email"
               placeholder="Email ex: vergelmacayan@gmail.com"
-              className="w-full p-2 border border-gray-300 rounded"
+              className="w-full p-2 border border-gray-300 rounded text-md"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
@@ -168,7 +168,7 @@ export default function Comment() {
               placeholder="Your Comment (Max 60 chars)"
               rows={6}
               maxLength={60}
-              className="w-full p-2 border border-gray-300 rounded"
+              className="w-full p-2 border border-gray-300 rounded text-md"
               value={comment}
               onChange={(e) => setComment(e.target.value)}
               required
