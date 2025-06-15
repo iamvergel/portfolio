@@ -1,79 +1,323 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect, useCallback } from "react";
+import useEmblaCarousel from "embla-carousel-react";
 
-type Repo = {
-  id: number;
+import Lightbox from "yet-another-react-lightbox";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
+import "yet-another-react-lightbox/styles.css";
+
+type ProjectType = {
   name: string;
-  html_url: string;
   description: string;
-  language: string;
-  stargazers_count: number;
+  tech: string[];
+  images: string[];
+  link: string;
+  domain: string;
 };
 
-const repoImages: { [key: string]: string } = {
-  "portfolio-site": "/images/portfolio-site.png",
-  "weather-app": "/images/weather-app.png",
-  "chat-app": "/images/chat-app.png",
-};
+const projects: ProjectType[] = [
+  {
+    name: "SIMGT - St.Emilie Learning Center Student Portal",
+    description:
+      "The SIMGT is a student portal with five user roles: Super Admin, Admission, Registrar, Teacher, and Student. It manages and displays student and teacher information. Students can view their grades, access announcements, and interact with the portal based on their role.",
+    tech: [
+      "Laravel",
+      "PHP",
+      "JavaScript",
+      "Blade",
+      "Tailwind",
+      "MySQL",
+      "Restful API",
+    ],
+    images: [
+      "/assets/project/project1/page1.png",
+      "/assets/project/project1/page2.png",
+      "/assets/project/project1/page3.png",
+      "/assets/project/project1/page4.png",
+      "/assets/project/project1/page5.png",
+    ],
+    link: "",
+    domain: "https://www.simgt66.com/",
+  },
+  {
+    name: "TLAD - Tala Learning and Development",
+    description:
+      "TLAD (Tala Learning and Development) is a web-based system designed to manage and store employee training certificates. It allows administrators to track which employees have attended seminars or training sessions each year. The platform includes features for uploading certificates, generating reports, and monitoring employee learning progress over time.",
+    tech: ["PHP", "JavaScript", "MySQL", "Bootstrap", "jQuery"],
+    images: [
+      "/assets/project/project2/page1.png",
+      "/assets/project/project2/page2.png",
+      "/assets/project/project2/page3.png",
+    ],
+    link: "",
+    domain: "",
+  },
+  {
+    name: "Villa Reyes Family Private Resort Reservation System",
+    description:
+      "Villa Reyes Family Private Resort Reservation System is a backend-focused web application developed using PHP and MySQL. It allows users to make resort reservations online while providing an admin dashboard for managing bookings, users, and website content. The system features two main user roles: admin and regular users. Admins have full control over the reservation system, including approving or declining bookings and updating resort information.",
+    tech: ["PHP", "JavaScript", "MySQL", "Bootstrap", "jQuery"],
+    images: [
+      "/assets/project/project3/page1.png",
+      "/assets/project/project3/page2.png",
+      "/assets/project/project3/page3.png",
+      "/assets/project/project3/page4.png",
+    ],
+    link: "",
+    domain: "https://villareyesfamilyprivateressort.com/",
+  },
+  {
+    name: "AccuraPos - Point of Sale System",
+    description:
+      "A comprehensive point of sale system designed to streamline retail operations, manage inventory, and enhance customer experience. This system integrates sales tracking, inventory management, and customer relationship features to provide a complete solution for businesses.",
+    tech: [
+      "Laravel",
+      "PHP",
+      "JavaScript",
+      "Blade",
+      "Tailwind",
+      "MySQL",
+      "Restful API",
+    ],
+    images: [
+      "/assets/project/project4/page1.png",
+      "/assets/project/project4/page2.png",
+      "/assets/project/project4/page3.png",
+      "/assets/project/project4/page4.png",
+      "/assets/project/project4/page5.png",
+    ],
+    link: "",
+    domain: "https://accurapos.shop/",
+  },
+  {
+    name: "Merciful Healthcare Management System",
+    description:
+      "A comprehensive point of sale system designed to streamline retail operations, manage inventory, and enhance customer experience. This system integrates sales tracking, inventory management, and customer relationship features to provide a complete solution for businesses.",
+    tech: [
+      "CodeIgniter",
+      "PHP",
+      "JavaScript",
+      "Tailwind",
+      "Restful API",
+      "MySQL",
+    ],
+    images: [
+      "/assets/project/project5/page1.png",
+      "/assets/project/project5/page2.png",
+    ],
+    link: "",
+    domain: "https://www.mercifulsaviourhc.com/",
+  },
+  {
+    name: "Attendance Monitoring System",
+    description:
+      "The Attendance Monitoring System is a web-based application designed to manage and track student attendance efficiently. It features role-based access for admins, teachers, and students. Admins and teachers can generate unique QR codes, which students scan using a scanner integrated with the system. Upon scanning, the system logs the student's time-in and time-out and automatically sends an email notification to their parents. The system enhances accuracy, security, and real-time monitoring of student attendance.",
+    tech: ["PHP", "JavaScript", "MySQL", "Bootstrap", "jQuery"],
+    images: [
+      "/assets/project/project6/page1.png",
+      "/assets/project/project6/page2.png",
+      "/assets/project/project6/page3.png",
+      "/assets/project/project6/page4.png",
+      "/assets/project/project6/page5.png",
+      "/assets/project/project6/page6.png",
+      "/assets/project/project6/page7.png",
+    ],
+    link: "",
+    domain: "",
+  },
+  {
+    name: "Zach Memorial Chapels and Funeral Services",
+    description:
+      "Zach Memorial Chapels and Funeral Services is a web-based booking system with two main user roles: admin and regular users. The system allows users to book funeral services and manage their personal booking records. Admins have full control over the platform, including managing user bookings, service inventory, and payment records. The system also features real-time notifications with sound alerts for both admins and users to ensure prompt updates and responses.",
+    tech: ["PHP", "JavaScript", "MySQL", "Bootstrap", "jQuery"],
+    images: [
+      "/assets/project/project7/page1.png",
+      "/assets/project/project7/page2.png",
+      "/assets/project/project7/page3.png",
+      "/assets/project/project7/page4.png",
+      "/assets/project/project7/page5.png",
+    ],
+    link: "",
+    domain: "",
+  },
+  {
+    name: "ICC - Canteen Ordering System",
+    description:
+      "ICC Canteen Ordering System is a real-time web application that facilitates canteen orders for students and admin. The system features two main user roles: admin and student. Admins can manage student recess times, control inventory, and oversee student orders. Students can browse the menu and manage their own orders seamlessly. Built with Firebase for real-time data updates, this system ensures smooth and efficient ordering operations.",
+    tech: ["HTML", "CSS", "JavaScript", "Firebase", "jQuery", "Node.js"],
+    images: [
+      "/assets/project/project8/page1.png",
+      "/assets/project/project8/page2.png",
+      "/assets/project/project8/page3.png",
+      "/assets/project/project8/page4.png",
+    ],
+    link: "",
+    domain: "https://icc-ordering-canteen.vercel.app/",
+  },
+  {
+    name: "ICC - Enrollment System",
+    description:
+      "ICC Enrollment System is a web application designed to manage student enrollment and their personal information. It also allows students to view their enrolled subjects and personal details. The system streamlines enrollment processes and keeps all student records organized in one place.",
+    tech: ["HTML", "CSS", "JavaScript", "Firebase", "jQuery"],
+    images: [
+      "/assets/project/project9/page1.png",
+      "/assets/project/project9/page2.png",
+      "/assets/project/project9/page3.png",
+      "/assets/project/project9/page4.png",
+    ],
+    link: "",
+    domain: "https://icc-enrollment-system.vercel.app/",
+  },
+  {
+    name: "NBAI",
+    description:
+      "NBAI is a fun project created for our group of friends, where each person has a unique hero role, skill, and personal history. It’s a creative and playful space built to enjoy and share stories together.",
+    tech: ["HTML", "CSS", "JavaScript"],
+    images: [
+      "/assets/project/project10/page1.png",
+      "/assets/project/project10/page2.png",
+      "/assets/project/project10/page3.png",
+      "/assets/project/project10/page4.png",
+    ],
+    link: "",
+    domain: "https://nbai-international.vercel.app/",
+  },
+];
 
-export default function Projects() {
-  const [repos, setRepos] = useState<Repo[]>([]);
+function ProjectCarousel({ images }: { images: string[] }) {
+  const [emblaRef, embla] = useEmblaCarousel({ loop: true });
+
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+
+  const autoplay = useCallback(() => {
+    if (!embla) return;
+    const interval = setInterval(() => {
+      embla.scrollNext();
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [embla]);
 
   useEffect(() => {
-    fetch("https://api.github.com/users/iamvergel/repos")
-      .then((res) => res.json())
-      .then((data) => {
-        const sorted = data
-          .sort((a: Repo, b: Repo) => b.stargazers_count - a.stargazers_count)
-          .slice(0, 6);
-        setRepos(sorted);
-      })
-      .catch((err) => console.error("Error fetching repos:", err));
-  }, []);
+    const stop = autoplay();
+    return () => stop && stop();
+  }, [autoplay]);
+
+  const slides = images.map((src) => ({ src }));
 
   return (
-    <section id="projects" className="py-12 px-4 bg-gray-100 text-black ">
-      <h2 className="text-4xl font-bold mb-10 text-center">Projects</h2>
-      <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 max-w-6xl mx-auto">
-        {repos.map((repo) => (
-          <div
-            key={repo.id}
-            className="bg-white border rounded-xl shadow hover:shadow-lg transition p-5 flex flex-col justify-between"
-          >
-            {/* Image */}
-            {repoImages[repo.name] && (
-              <img
-                src={repoImages[repo.name]}
-                alt={repo.name}
-                className="rounded-md mb-4 w-full h-40 object-cover"
-              />
-            )}
+    <>
+      <div className="overflow-hidden rounded-sm relative" ref={emblaRef}>
+        <div className="flex ">
+          {images.map((src, index) => (
+            <img
+              key={index}
+              src={src}
+              alt=""
+              className="flex-[0_0_100%] object-cover h-[200px] w-full cursor-zoom-in"
+              onClick={() => {
+                setLightboxIndex(index);
+                setLightboxOpen(true);
+              }}
+            />
+          ))}
+        </div>
+      </div>
 
-            <div>
-              <h3 className="text-xl font-semibold text-[#460000] mb-2">
-                {repo.name}
-              </h3>
-              <p className="text-sm text-gray-600 mb-3">
-                {repo.description || "No description available."}
-              </p>
-              <p className="text-xs text-gray-500">
-                Language: {repo.language || "N/A"}
-              </p>
+      {lightboxOpen && (
+        <Lightbox
+          open={lightboxOpen}
+          close={() => setLightboxOpen(false)}
+          index={lightboxIndex}
+          on={{
+            view: ({ index }) => setLightboxIndex(index),
+          }}
+          slides={slides}
+          plugins={[Zoom]}
+        />
+      )}
+    </>
+  );
+}
+
+export default function Projects() {
+  const [showAll, setShowAll] = useState(false);
+  const visibleProjects = showAll ? projects : projects.slice(0, 6);
+
+  return (
+    <section
+      className="w-full xl:max-w-[1400px] mx-auto h-auto px-4 py-10"
+      id="projects"
+    >
+      <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+        {visibleProjects.map((project, i) => (
+          <div
+            key={i}
+            className="bg-white rounded-md shadow-lg p-3 flex flex-col gap-4"
+            data-aos="fade-up"
+            data-aos-delay={i * 100}
+          >
+            <ProjectCarousel images={project.images} />
+            <h3 className="text-xl font-semibold text-[#2F465B]">
+              <a href={project.link} target="_blank" rel="noopener noreferrer">
+                {project.name}
+              </a>
+            </h3>
+            <p className="text-[14px] text-gray-600 text-justify">
+              {project.description}
+            </p>
+            <div className="flex flex-wrap gap-2 text-sm">
+              {project.tech.map((tech, j) => (
+                <span
+                  key={j}
+                  className="bg-[#2F465B] hover:bg-[#171E25] text-white px-3 py-2 rounded"
+                >
+                  {tech}
+                </span>
+              ))}
             </div>
-            <div className="mt-4 flex justify-between items-center">
-              <a
-                href={repo.html_url}
+            <div className="flex gap-2 justify-center items-center">
+              {/* <a
+                href={project.domain}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-600 hover:underline text-sm"
+                className="text-md w-full flex items-center justify-center text-center bg-[#171E25] text-white px-3 py-2 rounded hover:bg-[#2F465B] transition"
               >
-                View on GitHub →
-              </a>
-              <span className="text-xs bg-gray-200 px-2 py-1 rounded">
-                ⭐ {repo.stargazers_count}
-              </span>
+                Show More
+              </a> */}
+              {project.domain ? (
+                <a
+                  href={project.domain}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-md w-full flex items-center justify-center text-center bg-[#171E25] text-white px-3 py-2 rounded hover:bg-[#2F465B] transition"
+                >
+                  Go to website <i className="fas fa-arrow-right pl-2" />
+                </a>
+              ) : (
+                <button
+                  className="text-md w-full flex items-center justify-center text-center bg-gray-500 text-white px-3 py-2 rounded cursor-not-allowed"
+                  disabled
+                >
+                  No Available Link
+                </button>
+              )}
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="text-center pt-8">
+        <button
+          onClick={() => setShowAll(!showAll)}
+          className="bg-[#2F465B] text-white px-6 py-2 rounded-sm hover:bg-[#171E25] transition"
+        >
+          {showAll ? "Show Less" : "Show More"}
+          {showAll ? (
+            <i className="fas fa-arrow-up pl-2" />
+          ) : (
+            <i className="fas fa-arrow-down pl-2" />
+          )}
+        </button>
       </div>
     </section>
   );

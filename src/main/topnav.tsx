@@ -58,6 +58,7 @@ export default function TopNav() {
           <a
             href="#main"
             className={`nav-link ${activeLink === "#main" ? "active" : ""}`}
+            onClick={() => setActiveLink("#main")}
           >
             Home
           </a>
@@ -66,6 +67,7 @@ export default function TopNav() {
           <a
             href="#about"
             className={`nav-link ${activeLink === "#about" ? "active" : ""}`}
+            onClick={() => setActiveLink("#about")}
           >
             About
           </a>
@@ -74,6 +76,7 @@ export default function TopNav() {
           <a
             href="#design"
             className={`nav-link ${activeLink === "#design" ? "active" : ""}`}
+            onClick={() => setActiveLink("#design")}
           >
             Design
           </a>
@@ -82,16 +85,27 @@ export default function TopNav() {
           <a
             href="#artwork"
             className={`nav-link ${activeLink === "#artwork" ? "active" : ""}`}
+            onClick={() => setActiveLink("#artwork")}
           >
-            Artworks
+            Artwork
           </a>
         </li>
         <li>
           <a
             href="#projects"
             className={`nav-link ${activeLink === "#projects" ? "active" : ""}`}
+            onClick={() => setActiveLink("#projects")}
           >
-            Projects
+            Project
+          </a>
+        </li>
+        <li>
+          <a
+            href="#testimonial"
+            className={`nav-link ${activeLink === "#testimonial" ? "active" : ""}`}
+            onClick={() => setActiveLink("#testimonial")}
+          >
+            Testimonial
           </a>
         </li>
       </ul>
@@ -101,37 +115,44 @@ export default function TopNav() {
           <a
             href="#main"
             className={`nav-link ${activeLink === "#main" ? "active" : ""} w-26`}
-            onClick={toggleMenu}
+            onClick={() => { toggleMenu(); setActiveLink("#main"); }}
           >
             Home
           </a>
           <a
             href="#about"
             className={`nav-link ${activeLink === "#about" ? "active" : ""} w-26`}
-            onClick={toggleMenu}
+            onClick={() => { toggleMenu(); setActiveLink("#about"); }}
           >
             About
           </a>
           <a
             href="#design"
             className={`nav-link ${activeLink === "#design" ? "active" : ""} w-26`}
-            onClick={toggleMenu}
+            onClick={() => { toggleMenu(); setActiveLink("#design"); }}
           >
             Design
           </a>
           <a
             href="#artwork"
             className={`nav-link ${activeLink === "#artwork" ? "active" : ""} w-26`}
-            onClick={toggleMenu}
+            onClick={() => { toggleMenu(); setActiveLink("#artwork"); }}
           >
-            Artworks
+            Artwork
           </a>
           <a
             href="#projects"
             className={`nav-link ${activeLink === "#projects" ? "active" : ""} w-26`}
-            onClick={toggleMenu}
+            onClick={() => { toggleMenu(); setActiveLink("#projects"); }}
           >
-            Projects
+            Project
+          </a>
+          <a
+            href="#testimonial"
+            className={`nav-link ${activeLink === "#testimonial" ? "active" : ""} w-26`}
+            onClick={() => { toggleMenu(); setActiveLink("#testimonial"); }}
+          >
+            Testimonial
           </a>
         </div>
       )}

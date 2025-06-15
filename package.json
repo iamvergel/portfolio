@@ -14,10 +14,12 @@
     "@tailwindcss/vite": "^4.1.5",
     "aos": "^2.3.4",
     "embla-carousel-react": "^8.6.0",
+    "firebase": "^11.9.1",
     "framer-motion": "^12.17.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "serve": "^14.2.4",
+    "swiper": "^11.2.8",
     "yet-another-react-lightbox": "^3.23.2"
   },
   "devDependencies": {

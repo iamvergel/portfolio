@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
-
 import Zoom from "yet-another-react-lightbox/plugins/zoom";
 
 type Design = {
@@ -132,15 +131,15 @@ export default function Design() {
           data-aos="fade-right"
         >
           <h3
-            className="px-3 py-1 border-l-4 text-3xl font-bold text-[#171E25] hover:bg-[#171E25]/20 hover:cursor-pointer hover:pr-[10rem] transition-all duration-200"
+            className="px-3 py-1 border-l-4 text-3xl font-normal text-[#2F465B] hover:bg-[#171E25]/20 hover:cursor-pointer hover:pr-[10rem] transition-all duration-200"
             style={{ clipPath: "polygon(0% 0, 100% 0, 92% 100%, 0 100%)" }}
           >
-            Design
+            UI/UX <span className="text-[#171E25] font-bold">Designs</span>
           </h3>
         </div>
       </div>
 
-      <div className="relative w-full h-[2100px] sm:h-[1100px] md:h-[1100px] lg:h-[900px] bg-gradient-to-bl from-transparent via-70% via-transparent to-[#460000]/70">
+      <div className="relative w-full h-[2550px] sm:h-[1500px] md:h-[1400px] lg:h-[900px] bg-gradient-to-bl from-transparent via-70% via-transparent to-[#460000]/70">
         <img
           src="/assets/images/design-bg.png"
           alt="logo"
@@ -148,9 +147,24 @@ export default function Design() {
           data-aos="fade-up"
         />
 
-        <div className="absolute w-full h-full top-0 left-0  p-10">
+        <div className="absolute w-full h-full top-0 left-0 p-5 lg:p-10">
           <div className="w-full h-full grid grid-cols-1 lg:grid-cols-3">
-            <div className="w-full h-full "></div>
+            <div className="w-full h-full p-0 pb-0 lg:pb-0 lg:p-5 lg:px-10">
+              <p className="text-[16px] text-[#171E25] text-justify">
+                I started learning design when I was in 3rd year high school,
+                mostly using Canva and PowerPoint. I also used them to make
+                simple prototypes. In senior high, I started writing code, but I
+                wasn’t very focused because I didn’t really like programming at
+                that time.
+                <br /><br />
+                Things changed when I got to college. As a working student in my
+                3rd year, I was able to buy my own PC. That’s when I got serious
+                about design and started learning how to code properly.
+                <br /><br />
+                Later, I found Figma and Photoshop. I studied both, and now they
+                are the main tools I use for designing and prototyping.
+              </p>
+            </div>
             <div className="col-span-1 lg:col-span-2 w-full h-full flex justify-center items-center p-0">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto w-full">
                 {designs.map((design, index) => (
@@ -160,7 +174,7 @@ export default function Design() {
                     onClick={() => setSelected(design)}
                     className="cursor-pointer overflow-hidden rounded-sm bg-white shadow-lg p-1"
                     data-aos="fade-left"
-                    data-aos-delay={index * 300}
+                    data-aos-delay={index * 100}
                   >
                     <img
                       src={design.images[0]}
@@ -244,6 +258,9 @@ export default function Design() {
                               open={lightboxOpen}
                               close={() => setLightboxOpen(false)}
                               index={lightboxIndex}
+                              on={{
+                                view: ({ index }) => setLightboxIndex(index),
+                              }}
                               slides={slides}
                               plugins={[Zoom]}
                             />

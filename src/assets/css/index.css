@@ -4,7 +4,7 @@
 :root {
   font-family: "Red Rose", sans-serif;
   scrollbar-width: thin;
-  scrollbar-color: #8a030367 #8a030334;
+  scrollbar-color: #171e25c7 #171e255b;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -66,4 +66,8 @@
 .yarl__portal .yarl__container {
   background-color: rgba(0, 0, 0, 0.80) !important;
   transition: background-color 0.4s ease-in-out;
+}
+
+.stable-scrollbar {
+  scrollbar-gutter: stable;
 }
