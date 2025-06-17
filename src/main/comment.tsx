@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { initializeApp } from "firebase/app";
+import { doc, updateDoc, increment } from "firebase/firestore";
 import {
   getFirestore,
   collection,
@@ -22,9 +23,11 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 type CommentType = {
+  id?: string;
   email: string;
   comment: string;
   createdAt: Timestamp;
+  likes?: number;
 };
 
 export default function Comment() {
@@ -33,6 +36,7 @@ export default function Comment() {
   const [comment, setComment] = useState("");
   const [loading, setLoading] = useState(false);
   const [alertMessage, setAlertMessage] = useState<string | null>(null);
+  const [likedComments, setLikedComments] = useState<Set<string>>(new Set());
 
   const fetchComments = async () => {
     try {
@@ -41,12 +45,31 @@ export default function Comment() {
       snapshot.forEach((doc) => {
         const data = doc.data();
         if (data.status === 1) {
-          list.push(data as CommentType);
+          list.push({
+            ...(data as CommentType),
+            id: doc.id,
+            likes: data.likes || 0,
+          });
         }
       });
       setComments(list);
     } catch (error) {
       console.error("Error fetching comments:", error);
+    }
+  };
+
+  const handleLike = async (id: string) => {
+    if (likedComments.has(id)) return;
+
+    try {
+      const docRef = doc(db, "comments", id);
+      await updateDoc(docRef, {
+        likes: increment(1),
+      });
+      setLikedComments((prev) => new Set(prev).add(id));
+      fetchComments();
+    } catch (error) {
+      console.error("Error liking comment:", error);
     }
   };
 
@@ -123,10 +146,10 @@ export default function Comment() {
       </div>
 
       <div className="w-full mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 px-3 lg:px-10 p-10">
-        <div className="flex flex-col gap-5 max-h-[500px] overflow-y-auto  pr-2">
-          {comments.map((c, i) => (
+        <div className="flex flex-col gap-7 max-h-[500px] overflow-y-auto py-8  pr-2">
+          {comments.map((c) => (
             <div
-              key={i}
+              key={c.id}
               className="w-full bg-white p-6 shadow-lg rounded-md relative text-wrap border border-gray-300"
             >
               <p className="text-md text-[#2F465B]">{c.email}</p>
@@ -136,6 +159,19 @@ export default function Comment() {
               <p className="text-[#2F465B] pt-3 text-sm break-words whitespace-pre-wrap pb-3">
                 “{c.comment}”
               </p>
+
+              <button
+                className="absolute top-[-15px] right-4 flex items-center gap-1 bg-white border border-gray-300 shadow-md hover:bg-[#2F465B]/50 h-10 w-10 justify-center rounded-full"
+                onClick={() => handleLike(c.id || "")}
+                disabled={likedComments.has(c.id || "")}
+              >
+                <i
+                  className={`fas fa-heart text-xl ${
+                    (c.likes || 0) > 0 ? "text-red-500" : "text-gray-400"
+                  }`}
+                ></i>
+                <span className="text-sm text-white bg-[#2F465B] w-6 h-6 rounded-full flex items-center justify-center absolute top-[-8px] right-[-10px]">{c.likes || 0}</span>
+              </button>
             </div>
           ))}
         </div>
@@ -198,3 +234,4 @@ export default function Comment() {
     </section>
   );
 }
+

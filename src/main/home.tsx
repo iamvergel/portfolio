@@ -14,7 +14,6 @@ export default function Home() {
       document.body.style.overflow = "";
     };
   }, [isOpen]);
-  
 
   // const images = [
   //   "/assets/images/bg-image.png",
@@ -269,7 +268,7 @@ export default function Home() {
 
       <div className="absolute top-[4rem] sm:top-0 md:top-[0rem] lg:max-top-[0rem] w-full h-[650px] z-4 px-6 md:px-12 lg:px-12 flex flex-col justify-center ">
         <div
-          className="z-2 text-[#171E25] w-full border-l-4 border-[#171E25] flex flex-col justify-center items-start px-4 mt-10 z-[-1]"
+          className="z-2 text-[#171E25] w-full border-l-4 border-[#171E25] flex flex-col justify-center items-start px-4 mt-10"
           id="info"
           data-aos="fade-right"
         >
@@ -277,7 +276,7 @@ export default function Home() {
             HI I'M
           </p>
           <h1
-            className="text-[50px] sm:text-[60px] md:text-[65px] lg:text-[65px] font-bold uppercase leading-10 lg:leading-14 sm:leading-12 lg:leading-14"
+            className="text-[50px] sm:text-[60px] md:text-[65px] lg:text-[65px] font-bold uppercase leading-10 lg:leading-14 sm:leading-12"
             style={{ textShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)" }}
           >
             Vergel{" "}
@@ -473,7 +472,7 @@ export default function Home() {
           )}
         </div>
         <div
-          className="flex hidden md:hidden absolute gap-5 bg-[#171E25] py-2 z-1 top-[11rem] left-[-1rem] w-full justify-center items-center"
+          className="hidden absolute gap-5 bg-[#171E25] py-2 z-1 top-[11rem] left-[-1rem] w-full justify-center items-center"
           data-aos="fade-up"
         >
           <a
